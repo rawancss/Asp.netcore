@@ -1,0 +1,52 @@
+﻿@model Hrpage.Models.empl
+<html>
+<head>
+    <style>
+        .input-validation-error{
+            border:1px solid darkred;
+            background-color:#ffcccb;
+        
+        }
+        .validation-summary-errors{
+            color:pink;
+            font-weight:bolder;
+
+        }
+    </style>
+</head>
+<body>
+    <form asp-action="emplo" method="post">
+        <h1>Employees form</h1>
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-group">
+            <label asp-for="Name">employee name </label>
+            <input asp-for="Name" class="form-control form-control-sm" placeholder="enter full name"/>
+        </div>
+        <div class="form-group">
+            <label asp-for="depart">depart name </label>
+            <select asp-for="depart" class="form-control">
+
+               <option></option>
+                <option value="it">it</option>
+                <option value="is">is</option>
+                <option value="css">css</option>
+           </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="birthdate">BERTHDATE </label>
+            <input type="date" asp-for="birthdate" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="email">E-mail </label>
+            <input asp-for="email" class="form-control" />
+        </div>
+        <div class="form-check form-check-inline">
+            <label asp-for="isactive" class="form-check-label">is ACTIVE </label>
+            <input type="checkbox" asp-for="isactive" class="form-check-input"/>
+        </div>
+        <button type="submit" class="btn btn-success d-grid">submit</button>
+    </form>
+</body>
+</html>
+
